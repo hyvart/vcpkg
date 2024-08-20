@@ -20,11 +20,13 @@
   ],
   "default-features": [
     "avcodec",
-    "avdevice",
     "avfilter",
     "avformat",
     "swresample",
-    "swscale"
+    "swscale",
+    "none",
+    "decoder-adpcm-ima-qt",
+    "demuxer-aiff"
   ],
   "features": {
     "all": {
@@ -337,11 +339,20 @@
         "bzip2"
       ]
     },
+    "d3d11va": {
+      "description": "Microsoft Direct3D 11 video acceleration code"
+    },
     "dav1d": {
       "description": "AV1 decoding via libdav1d",
       "dependencies": [
         "dav1d"
       ]
+    },
+    "decoder-adpcm-ima-qt": {
+      "description": "Enable decoder ADPCM_IMA_QT"
+    },
+    "demuxer-aiff": {
+      "description": "Enable AIFF demuxer"
     },
     "fdk-aac": {
       "description": "AAC de/encoding via libfdk-aac, **including GPL-incompatible patent-encumbered HE-AAC**. If you do not require HE-AAC, use the built-in FFmpeg AAC codec.",
@@ -459,6 +470,9 @@
       "dependencies": [
         "mp3lame"
       ]
+    },
+    "none": {
+      "description": "Initially disable building components, libraries and programs"
     },
     "nonfree": {
       "description": "Allow use of nonfree code, the resulting libs and binaries will be unredistributable"
